@@ -1,4 +1,4 @@
-** null is a value that means a variable doesn't hold a reference to an object. The variable exists, but it doesn't refer to anything
+* null is a value that means a variable doesn't hold a reference to an object. The variable exists, but it doesn't refer to anything
 
 ** A nullable type can hold null values in addition to its base type. You define a type as nullable by adding a ? to the end of it.
 
