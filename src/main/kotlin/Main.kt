@@ -1,7 +1,46 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+fun main() {
+    var w: Wolf? = Wolf()
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+    if (w != null) w.eat()
+
+    var x = w?.hunger
+    println("The value of x is $x")
+
+    var y = w?.hunger ?: -1
+    println("The value of y is $y")
+
+    var myWolf = myWolf()
+    myWolf?.wolf?.hunger = 8
+    println("The value of myWolf?.wolf?.hunger is ${myWolf?.wolf?.hunger}")
+
+    var myArray = arrayOf("Hi", "Hello", null)
+    for (i in myArray){
+        i?.let { println(it) }
+    }
+
+    getAlphaWolf()?.let{it.eat()}
+
+
+
+}
+
+class Wolf {
+    var hunger = 10
+    val food = "meat"
+
+    fun eat() {
+        println("The Wolf is eating $food")
+    }
+}
+
+class myWolf {
+    var wolf: Wolf? = Wolf()
+
+    fun myFun(){
+        wolf?.eat()
+    }
+}
+
+fun getAlphaWolf () : Wolf? {
+    return Wolf()
 }
